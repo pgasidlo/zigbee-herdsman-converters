@@ -2215,6 +2215,7 @@ module.exports = [
             tz.haozee_thermostat_boost_heating_countdown, tz.haozee_thermostat_window_detection,
             tz.haozee_thermostat_child_lock, tz.haozee_thermostat_temperature_calibration, tz.haozee_thermostat_max_temperature,
             tz.haozee_thermostat_min_temperature, tz.haozee_thermostat_preset,
+            tz.haozee_thermostat_schedule_programming_mode
         ],
         exposes: [
             e.battery(), e.child_lock(), e.max_temperature(), e.min_temperature(),
