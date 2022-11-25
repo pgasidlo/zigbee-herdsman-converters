@@ -3620,6 +3620,7 @@ const converters = {
             };
             const dpId = map[key];
             const payload = [];
+            payload[0] = 0; // ??
             const items = value.split(' ');
 
             for (let i = 0; i < 4; i++) {
@@ -3633,9 +3634,10 @@ const converters = {
                     throw new Error('Invalid hour, minute or temperature of:' + items[i]);
                 }
 
-                payload[i*3 + 1] = hour;
-                payload[i*3 + 2] = minute;
-                payload[i*3 + 4] = temperature * 10;
+                payload[i*4 + 1] = hour;
+                payload[i*4 + 2] = minute;
+                payload[i*4 + 3] = 0; // ??
+                payload[i*4 + 4] = temperature * 10;
             }
             await tuya.sendDataPointRaw(entity, dpId, payload);
         },
